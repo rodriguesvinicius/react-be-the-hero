@@ -15,7 +15,7 @@ export default function NewIncident(){
     const history = useHistory();
     const ongId = localStorage.getItem('ongId');
 
-   async function handleNewIncident(e){
+    function handleNewIncident(e){
         e.preventDefault();
 
         const data={
@@ -25,7 +25,7 @@ export default function NewIncident(){
         }
 
         try{
-            await api.post('incidents' ,data,{
+             api.post('incidents' ,data,{
                 headers:{
                     Authorization: ongId,
                 }
